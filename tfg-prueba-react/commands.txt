@@ -1,0 +1,17 @@
+-- Crear una app React
+
+npx create-react-app blogapi .
+
+npm start
+
+npm install react-router-dom
+
+pip install django-cors-headers
+
+npm install axios
+
+Info:
+
+Strict Mode
+
+StrictMode is a tool for highlighting potential problems in an application. 
