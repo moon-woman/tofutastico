@@ -17,8 +17,8 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
-    
-    
+
+
 class Post (models.Model):
     
     # para mostrar solo los datos que tengan el estado de publicado
@@ -35,6 +35,7 @@ class Post (models.Model):
         Category, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=250)
     excerpt = models.TextField(null=True)
+    ingredients = models.TextField(blank=True, null=True)
     content = models.TextField()
     slug = models.SlugField(max_length=250, unique_for_date='published')
     published = models.DateTimeField(default=timezone.now)

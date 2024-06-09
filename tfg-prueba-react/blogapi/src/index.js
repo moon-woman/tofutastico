@@ -9,7 +9,13 @@ import Footer from './components/footer';
 import Registrarse from './components/registro';
 import Login from './components/login';
 import Logout from './components/logout';
-import Single from './components/single';
+import Receta from './components/single';
+import Busqueda from './components/busqueda';
+import Perfil from './components/perfil';
+import NuevaReceta from './components/nuevaReceta';
+import Editar from './components/editar';
+import Eliminar from './components/eliminar';
+import PerfilEditar from './components/user/editarusuario';
 
 
 
@@ -27,7 +33,13 @@ root.render(
         <Route path='/registro' element={<Registrarse />} />
         <Route path='/login' element={<Login />} />
         <Route path='/logout' element={<Logout />} />
-        <Route path='/post/:slug' element={<Single />} />
+        <Route path='/post/:slug' element={<Receta />} />
+        <Route path='post/crear' element={<NuevaReceta />} />
+        <Route path='/post/editar/:id' element={<Editar />} />
+        <Route path='/post/eliminar/:id' element={<Eliminar />} />
+        <Route path='/search' element={<Busqueda />} />
+        <Route path='/profile/:alias' element={<Perfil />} />
+        <Route path='/profile/:alias/editar' element={<PerfilEditar />} />
       </Routes>
       <Footer />
     </Router>

@@ -14,6 +14,7 @@ module.exports = {
         "tofu-yellow" : '#FFFBCE',
         "tofu-blue" : "#8CCBFF",
         "tofu-grey" : "#E2E2E2",
+        "tofu-green" : "#A6E4B9",
       }
     },
   },

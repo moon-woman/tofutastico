@@ -29,6 +29,7 @@ export default function Login(){
             .then((res) => {
                 localStorage.setItem('access_token', res.data.access);
                 localStorage.setItem('refresh_token', res.data.refresh);
+                localStorage.setItem('logged_username', datosFormulario.alias_usuario);
                 axiosInstancia.defaults.headers['Authorization'] =
                     'JWT ' + localStorage.getItem('access_token');
                 history('/');
@@ -59,7 +60,7 @@ export default function Login(){
                                 autoComplete='username'
                                 onChange={cambios}
                             />
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="password">Nombre de usuario*</label>
+                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="alias_usuario">Nombre de usuario*</label>
                         </div>
                         <div className="relative">
                             <input
