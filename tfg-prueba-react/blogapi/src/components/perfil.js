@@ -42,9 +42,9 @@ const Perfil = () => {
 
     return (
         <React.Fragment>
-            <div className='flex flex-col justify-center items-center gap-10 py-20 px-28'>
-                <h1 className='font-montserrat text-3xl'>¡Este es tu perfil, <span className='text-tofu-green font-bold'>{data.perfil.alias_usuario}!</span></h1>
-                <div className='w-3/4 border-t border-b border-tofu-green flex flex-row items-center justify-between'>
+            <div className='flex flex-col justify-center items-center gap-10 pt-72 pb-20 px-10 xl:px-28'>
+                <h1 className='font-montserrat text-3xl'>¡Este es tu perfil, <span className='text-tofu-green font-bold'>{data.perfil.alias_usuario}</span>!</h1>
+                <div className='w-full xl:w-3/4 border-t border-b border-tofu-green flex flex-row items-center justify-between'>
                     <div className='flex flex-row items-center justify-start gap-10'>
                         <img src={data.perfil.foto_usuario} alt="Cat in a jacket"/>
                         <div className='flex flex-col items-start justify-start gap-5'>
@@ -57,8 +57,8 @@ const Perfil = () => {
                     </div>
                     <div className='flex flex-col items-center justify-center gap-10'>
                         <NavLink to="/post/crear/">
-                            <button type="button" className="bg-white border border-tofu-green text-center w-48 rounded-2xl h-14 relative font-nunito text-black text-xl font-semibold group">
-                                <div class="bg-tofu-green rounded-xl h-14 w-1/4 flex items-center justify-center absolute left-0 top-0 group-hover:w-48 z-10 duration-500">
+                            <button type="button" className="bg-white border border-tofu-green text-center w-40 2xl:w-48 rounded-2xl h-10 2xl:h-14 relative font-nunito text-black text-lg 2xl:text-xl font-semibold group">
+                                <div class="bg-tofu-green rounded-xl h-10 2xl:h-14 w-1/4 flex items-center justify-center absolute left-0 top-0 group-hover:w-40 2xl:group-hover:w-48 z-10 duration-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                     </svg>
@@ -68,8 +68,8 @@ const Perfil = () => {
 
                         </NavLink>
                         <NavLink to={"/profile/" + data.perfil.alias_usuario + "/editar/"}>
-                            <button type="button" className="bg-white border border-tofu-blue text-center w-48 rounded-2xl h-14 relative font-nunito text-black text-xl font-semibold group">
-                                <div class="bg-tofu-blue rounded-xl h-14 w-1/4 flex items-center justify-center absolute left-0 top-0 group-hover:w-48 z-10 duration-500">
+                            <button type="button" className="bg-white border border-tofu-blue text-center w-40 2xl:w-48 rounded-2xl h-10 2xl:h-14 relative font-nunito text-black text-lg 2xl:text-xl font-semibold group">
+                                <div class="bg-tofu-blue rounded-xl h-10 2xl:h-14 w-1/4 flex items-center justify-center absolute left-0 top-0 group-hover:w-40 2xl:group-hover:w-48 z-10 duration-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                     </svg>

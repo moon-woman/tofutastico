@@ -30,7 +30,7 @@ export default function Editar() {
                 extracto: resp.data.excerpt,
                 ingredientes: resp.data.ingredients,
                 contenido: resp.data.content,
-                categoria: resp.data.category,
+                categoria: resp.data.category.id,
                 imagen: null,
             });
             setImagenPrevia(resp.data.photo);
@@ -86,10 +86,10 @@ export default function Editar() {
 
     return (
         <React.Fragment>
-            <section className='flex items-center justify-center py-20'>
-                <div className="w-1/2 bg-gradient-to-br from-tofu-blue to-white rounded-xl shadow-2xl overflow-hidden p-8 space-y-8">
+            <section className='flex items-center justify-center pt-72 pb-20'>
+                <div className="w-2/3 lg:w-1/2 border border-tofu-blue rounded-xl shadow-2xl overflow-hidden p-8 space-y-8">
                     <div className='relative'>
-                        <h2 className="text-center text-4xl font-extrabold text-white font-montserrat">
+                        <h2 className="text-center text-4xl font-extrabold text-black font-montserrat">
                             Editar la receta "{datosFormulario.titulo}"
                         </h2>
                         {imagenPrevia && (
@@ -100,7 +100,7 @@ export default function Editar() {
                         <div className="relative">
                             <input
                                 placeholder="Título"
-                                className="peer h-10 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer h-10 w-full border-b-2 border-tofu-blue text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="titulo"
                                 name="titulo"
@@ -108,12 +108,12 @@ export default function Editar() {
                                 value={datosFormulario.titulo}
                                 onChange={cambios}
                             />
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="titulo">Título</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="titulo">Título</label>
                         </div>
                         <div className="relative">
                             <input
                                 placeholder="Slug"
-                                className="peer h-10 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer h-10 w-full border-b-2 border-tofu-blue text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="slug"
                                 name="slug"
@@ -121,18 +121,18 @@ export default function Editar() {
                                 value={datosFormulario.slug}
                                 onChange={cambios}
                             />
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="slug">Slug</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="slug">Slug</label>
                         </div>
                         <div className="relative">
                             <select
-                                className="peer h-10 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer h-10 w-full border-b-2 border-tofu-blue text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="categoria"
                                 name="categoria"
                                 autoComplete='categoria'
                                 onChange={cambios} 
-                                value={datosFormulario.categoria.id}
-                                defaultValue={datosFormulario.categoria.id}
+                                value={datosFormulario.categoria}
+                                defaultValue={datosFormulario.categoria}
                             >
                                 <option value="">Selecciona una categoría</option>
                                 {categorias && categorias.map((categoria) => (
@@ -146,17 +146,17 @@ export default function Editar() {
                             <input
                                 type='file'
                                 placeholder="Imagen"
-                                className="peer h-10 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer py-2 h-10 w-full border-b-2 border-tofu-blue text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 id="imagen"
                                 name="imagen"
                                 onChange={cambios}
                             />
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="imagen">Imagen</label>
+                            <label className="absolute left-0 -top-3.5 text-base transition-all text-black" htmlFor="imagen">Imagen</label>
                         </div>
                         <div className="relative">
                             <textarea
                                 placeholder="Extracto"
-                                className="peer h-20 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer h-20 w-full border-b-2 border-tofu-blue text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="extracto"
                                 name="extracto"
@@ -164,12 +164,12 @@ export default function Editar() {
                                 value={datosFormulario.extracto}
                                 onChange={cambios}
                             ></textarea>
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="extracto">Breve descripción</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="extracto">Breve descripción</label>
                         </div>
                         <div className="relative">
                             <textarea
                                 placeholder="Ingredientes"
-                                className="peer resize-none h-44 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer resize-none h-44 w-full border-b-2 border-tofu-blue text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="ingredientes"
                                 name="ingredientes"
@@ -177,12 +177,12 @@ export default function Editar() {
                                 value={datosFormulario.ingredientes}
                                 onChange={cambios}
                             ></textarea>
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="ingredientes">Introduce los ingredientes separados por "Intro"</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="ingredientes">Introduce los ingredientes separados por "Intro"</label>
                         </div>
                         <div className="relative">
                             <textarea
                                 placeholder="Paso a paso"
-                                className="peer resize-none h-44 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer resize-none h-44 w-full border-b-2 border-tofu-blue text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="contenido"
                                 name="contenido"
@@ -190,9 +190,9 @@ export default function Editar() {
                                 value={datosFormulario.contenido}
                                 onChange={cambios}
                             ></textarea>
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="contenido">Introduce el paso a paso separado por "Intro"</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="contenido">Introduce el paso a paso separado por "Intro"</label>
                         </div>
-                        <button className="w-full py-2 px-4 bg-tofu-pink border border-tofu-pink hover:bg-transparent rounded-md shadow-lg text-white font-semibold transition duration-200 uppercase font-nunito hover:text-tofu-pink" type="submit">Actualizar</button>
+                        <button className="w-full py-2 px-4 bg-tofu-blue border border-tofu-blue hover:bg-transparent rounded-md shadow-lg text-black font-semibold transition duration-200 uppercase font-nunito hover:text-tofu-blue" type="submit">Actualizar</button>
                     </form>
                 </div>
             </section>

@@ -63,10 +63,10 @@ export default function PerfilEditar() {
 
     return (
         <React.Fragment>
-            <section className='flex items-center justify-center py-20'>
-                <div className="w-1/2 bg-gradient-to-br from-tofu-blue to-white rounded-xl shadow-2xl overflow-hidden p-8 space-y-8">
+            <section className='flex items-center justify-center pt-72 pb-20'>
+                <div className="w-2/3 lg:w-1/2 border border-tofu-pink rounded-xl shadow-2xl overflow-hidden p-8 space-y-8">
                     <div className='relative'>
-                        <h2 className="text-center text-4xl font-extrabold text-white font-montserrat">
+                        <h2 className="text-center text-4xl font-extrabold text-black font-montserrat">
                             Editar información del usuario "{alias}"
                         </h2>
                     </div>
@@ -74,7 +74,7 @@ export default function PerfilEditar() {
                         <div className="relative">
                             <input
                                 placeholder="Nombre"
-                                className="peer h-10 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer h-10 w-full border-b-2 border-tofu-pink text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="nombre"
                                 name="nombre"
@@ -82,12 +82,12 @@ export default function PerfilEditar() {
                                 value={datosFormulario.nombre}
                                 onChange={cambios}
                             />
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="nombre">Nombre</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="nombre">Nombre</label>
                         </div>
                         <div className="relative">
                             <input
                                 placeholder="Primer apellido"
-                                className="peer h-10 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer h-10 w-full border-b-2 border-tofu-pink text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="apellido_primero"
                                 name="apellido_primero"
@@ -95,12 +95,12 @@ export default function PerfilEditar() {
                                 value={datosFormulario.apellido_primero}
                                 onChange={cambios}
                             />
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="apellido_primero">Primer apellido</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="apellido_primero">Primer apellido</label>
                         </div>
-                        <div className="relative">
+                        <div className="relative pb-5">
                             <input
                                 placeholder="Segundo apellido"
-                                className="peer h-20 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer h-10 w-full border-b-2 border-tofu-pink text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="apellido_segundo"
                                 name="apellido_segundo"
@@ -108,13 +108,13 @@ export default function PerfilEditar() {
                                 value={datosFormulario.apellido_segundo}
                                 onChange={cambios}
                             />
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="apellido_segundo">Segundo apellido</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="apellido_segundo">Segundo apellido</label>
                         </div>
                         <div className="relative">
                             <input
                                 type='date'
                                 placeholder="Fecha de nacimiento"
-                                className="peer resize-none h-44 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer resize-none h-10 w-full border-b-2 border-tofu-pink text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="fecha_nacimiento"
                                 name="fecha_nacimiento"
@@ -122,12 +122,12 @@ export default function PerfilEditar() {
                                 value={datosFormulario.fecha_nacimiento}
                                 onChange={cambios}
                             />
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="fecha_nacimiento">Fecha de nacimiento</label>
+                            <label className="absolute left-0 -top-7 text-black text-base transition-all" htmlFor="fecha_nacimiento">Fecha de nacimiento</label>
                         </div>
                         <div className="relative">
                             <textarea
                                 placeholder="Sobre ti"
-                                className="peer resize-none h-44 w-full border-b-2 border-white text-white bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
+                                className="peer resize-none h-44 w-full border-b-2 border-tofu-pink text-black bg-transparent placeholder-transparent focus:outline-none focus:border-tofu-pink"
                                 required
                                 id="descripcion"
                                 name="descripcion"
@@ -135,9 +135,9 @@ export default function PerfilEditar() {
                                 value={datosFormulario.descripcion}
                                 onChange={cambios}
                             ></textarea>
-                            <label className="absolute left-0 -top-3.5 text-white text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="descripcion">Sobre ti</label>
+                            <label className="absolute left-0 -top-3.5 text-black text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-black peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm" htmlFor="descripcion">Sobre ti</label>
                         </div>
-                        <button className="w-full py-2 px-4 bg-tofu-pink border border-tofu-pink hover:bg-transparent rounded-md shadow-lg text-white font-semibold transition duration-200 uppercase font-nunito hover:text-tofu-pink" type="submit">Actualizar</button>
+                        <button className="w-full py-2 px-4 bg-tofu-pink border border-tofu-pink hover:bg-transparent rounded-md shadow-lg text-black font-semibold transition duration-200 uppercase font-nunito hover:text-tofu-pink" type="submit">Actualizar</button>
                     </form>
                 </div>
             </section>

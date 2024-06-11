@@ -38,7 +38,7 @@ export default function Registrarse(){
     return(
 
         <React.Fragment>
-            <section className='flex items-center justify-center py-20'>
+            <section className='flex items-center justify-center pt-72 pb-20'>
                 <div style={{animation: "slideInFromLeft 1s ease-out"}} className="max-w-md w-full bg-gradient-to-br from-tofu-blue to-white rounded-xl shadow-2xl overflow-hidden p-8 space-y-8">
                     <div className='relative'>
                         <h2 style={{animation: "appear 2s ease-out"}} className="text-center text-4xl font-extrabold text-white font-montserrat">¡Únete a nuestra comunidad!</h2>

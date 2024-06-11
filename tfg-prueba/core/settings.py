@@ -178,7 +178,11 @@ CORS_ORIGIN_WHITELIST = [
 
 MEDIA_URL = '/'
 
+DEFAULT_CATEGORY_PHOTO_URL = '/photos/categoria-standard.png'
+
+
 AUTH_USER_MODEL = "usuarios.NewUser"
+
 
 
 SIMPLE_JWT = {

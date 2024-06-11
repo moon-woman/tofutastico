@@ -16,7 +16,11 @@ import NuevaReceta from './components/nuevaReceta';
 import Editar from './components/editar';
 import Eliminar from './components/eliminar';
 import PerfilEditar from './components/user/editarusuario';
-
+import Lista from './components/recetas/listarecetas';
+import ListaCategorias from './components/recetas/listacategorias';
+import PostPorCategoria from './components/categorias/obtenerpostcategoria';
+import SobreNosotros from './components/paginasinfo/sobrenosotros';
+import Contacto from './components/paginasinfo/contacto';
 
 
 
@@ -30,6 +34,9 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/posts" element={<Lista />} />
+        <Route path="/categorias" element={<ListaCategorias />} />
+        <Route path='/categoria/:nombre_categoria/posts' element={<PostPorCategoria />} />
         <Route path='/registro' element={<Registrarse />} />
         <Route path='/login' element={<Login />} />
         <Route path='/logout' element={<Logout />} />
@@ -40,6 +47,8 @@ root.render(
         <Route path='/search' element={<Busqueda />} />
         <Route path='/profile/:alias' element={<Perfil />} />
         <Route path='/profile/:alias/editar' element={<PerfilEditar />} />
+        <Route path='/go-vegan' element={<SobreNosotros />} />
+        <Route path='/contacto' element={<Contacto />} />
       </Routes>
       <Footer />
     </Router>

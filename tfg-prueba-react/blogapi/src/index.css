@@ -13,32 +13,33 @@
   src: url('../src/fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf');
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 .btn-user button{
   @apply rounded-full px-5 py-1 font-nunito uppercase text-black border text-base;
 }
 
 .menu-header{
-  @apply flex flex-row items-center justify-center gap-16 font-montserrat font-semibold text-base;
+  @apply flex flex-row items-center justify-center gap-16 font-montserrat font-semibold text-base sm:text-lg;
 }
 
 .menu-header li{
-  @apply cursor-pointer;
+  @apply cursor-pointer text-black transition duration-300 ease-in-out hover:scale-125 hover:text-tofu-pink;
 }
 
 .menu-footer > li{
   @apply cursor-pointer text-base font-nunito;
+}
+
+header{
+  @apply transition duration-300 flex flex-col items-center justify-center w-full bg-transparent backdrop-blur-md fixed top-0 z-50;
+}
+
+
+header.scrolled{
+  @apply shadow-lg bg-transparent backdrop-blur-sm;
+
+}
+
+.busqueda::placeholder{
+  @apply text-gray-700;
 }

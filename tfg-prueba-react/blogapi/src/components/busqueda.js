@@ -20,10 +20,10 @@ const Busqueda = () => {
 
     return (
         <React.Fragment>
-            <section className='py-10 flex flex-col items-center justify-center'>
+            <section className='pt-64 pb-10 flex flex-col items-center justify-center'>
                 
                 <h1 className='text-4xl py-10 font-montserrat text-tofu-green font-semibold text-center'>Recetas que coindicen con "{searchQuery}"</h1>
-                <div className='flex flex-wrap justify-center items-center gap-10 py-20'>
+                <div className='flex flex-row justify-center items-center gap-20 py-20'>
                     {appState.posts.map((receta) => {
                         return (
                             <div key={receta.id} className='flex flex-col items-start justify-start gap-5 w-1/2'>

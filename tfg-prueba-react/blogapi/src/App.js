@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './index.css';
 import Recetas from './components/Recetas';
 import RecetaLoadingComponent from './components/RecetaLoading';
-import HomeHero from './components/Home-hero';
+import Hero from './components/Home-hero';
 
 
 function App(){
@@ -14,7 +14,7 @@ function App(){
 
   useEffect(() => {
     setAppState({loading: true});
-    const apiUrl = 'http://127.0.0.1:8000/api/post/';
+    const apiUrl = 'http://127.0.0.1:8000/api/recientes/';
     fetch(apiUrl)
       .then((data) => data.json())
       .then((recetas) => {
@@ -23,8 +23,9 @@ function App(){
   }, [setAppState]);
 
   return (
-    <div className='App'>
-      <h1 className='font-montserrat text-4xl text-center pt-10'>Últimas Recetas</h1>
+    <div className='App overflow-x-hidden'>
+      <Hero />
+      <h1 className='font-montserrat text-4xl text-center pt-10' id='discover'>Últimas Recetas</h1>
       <RecetaLoading isLoading={appState.loading} recetas={appState.recetas} />
     </div>
   );

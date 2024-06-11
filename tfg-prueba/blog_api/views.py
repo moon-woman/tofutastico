@@ -3,7 +3,7 @@
 from rest_framework import generics
 from blog.models import Category, Post
 from usuarios.models import NewUser
-from .serializers import CategorySerializer, PostCreate, PostSerializer, UserPatchSerializer, UserSerializer
+from .serializers import CategorySerializer, CategoryWithRandomPhotoSerializer, PostCreate, PostSerializer, UserPatchSerializer, UserSerializer
 from rest_framework.permissions import SAFE_METHODS, BasePermission, IsAdminUser, DjangoModelPermissionsOrAnonReadOnly, AllowAny, IsAuthenticated
 from rest_framework import viewsets
 from rest_framework import filters
@@ -12,6 +12,10 @@ from rest_framework.response import Response
 from django.db.models import Q
 from rest_framework import status
 from rest_framework.views import APIView
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 
 
@@ -79,6 +83,12 @@ class PostList(viewsets.ModelViewSet):
         if alias_usuario is not None:
             queryset = queryset.filter(author__alias_usuario=alias_usuario)
         return queryset
+
+
+class UltimasRecetasAPIView(generics.ListAPIView):
+    queryset = Post.objects.order_by('-published')[:3]
+    serializer_class = PostSerializer
+    
 
 class PostListDetailfilter(generics.ListAPIView):
 
@@ -162,5 +172,21 @@ class EditarPerfil(generics.UpdateAPIView):
 
 class CategoryList(generics.ListAPIView):
     serializer_class = CategorySerializer
-    
     queryset = Category.objects.all()
+
+class CategoryListImage(generics.ListAPIView):
+    serializer_class = CategoryWithRandomPhotoSerializer
+    queryset = Category.objects.all()
+    
+    
+class CategoryListPosts(generics.ListAPIView):
+    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    serializer_class = PostSerializer
+
+    def get_queryset(self):
+        category_name = self.kwargs.get('name')
+        queryset = Post.objects.filter(category__name__iexact=category_name)
+        return queryset
+
+    
+

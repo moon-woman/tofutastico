@@ -26,7 +26,7 @@ export default function Eliminar() {
 
     return (
         <React.Fragment>
-            <section className='flex flex-col items-center justify-center py-28 gap-10'>
+            <section className='flex flex-col items-center justify-center pt-72 gap-10'>
                 <h1 className='font-montserrat text-red-700 text-4xl py-10 font-bold'>¿Deseas borrar esta receta?</h1>
                 <button onClick={enviar} className='text-white text-xl py-5 px-10 font-nunito bg-red-700 hover:scale-125 flex flex-row items-center justify-center rounded-3xl gap-5 transition duration-300 ease-in-out uppercase'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 stroke-white">
